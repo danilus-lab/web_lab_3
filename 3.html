@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Лабораторная 3</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" type="text/css" href="style3-4.css" media="screen">
+</head>
+<body>
+<h1 style="position:absolute;" >Задание 3 
+<!--*Фон*--!>
+<div style="width:700px;height:450px;background-color: #20B2AA; z-index: 0;">
+<!--*Создание таблицы*--!>
+<table style="border: 1px solid grey; position:absolute; top:65px; left: 25px;">
+	<tr>
+		<td  onmouseover="applyAlternativeStyle(this)" onmouseout="restoreNormalStyle(this)" style="width: 300px;" >
+			Медведь
+		</td>
+ <td rowspan="3"  style="width:350px;height:350px;">
+		<img id = "st" src="image/em.jpg">
+ </td>
+	</tr>
+	<tr>
+		<td onmouseover="applyAlternativeStyle1(this)" onmouseout="restoreNormalStyle(this)">
+			Енот
+		</td>
+	</tr>
+	<tr>
+		<td onmouseover="applyAlternativeStyle2(this)" onmouseout="restoreNormalStyle(this)">
+			 Капибара
+		</td>
+	</tr>
+</table>
+</div>
+<h1 style="position:absolute; left: 750px;">Задание 4 
+<!--*Контейнер для слайд-шоу*--!>
+<div class="slideshow-container" style = "position: absolute; top: 50px; left:0px">
+<!--*Добавление слайдов (картинка+текст) class указывается для того чтоб
+настроить его через style.css*--!>
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="image\medved.jpg" style="width:700px">
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="image\enot.jpg" style="width:700px">
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="image\cap.jpg" style="width:700px">
+    </div>
+<!--*Добавление стрелочек и обработчика событий *--!>
+<!--*&#10094; - код символя стрелочка*--!>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<script>
+<!--*переменная с текущим слайдом*--!>
+var slideIndex = 1;
+showSlides(slideIndex);
+<!--*переход к следущему слайду*--!>
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+<!--*возврат к предыдущему слайду*--!>
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+<!--*функция проверяющая слайды*--!>
+function showSlides(n) {
+  var i;//счётчик
+  var slides = document.getElementsByClassName("mySlides");// массив слайдов
+  if (n > slides.length) {slideIndex = 1}//если переходим к следущему после 4, то это 1
+  if (n < 1) {slideIndex = slides.length}//если возвращаемся раньше 1, то это 4
+<!--*Для того чтоб появлялась новая картинка и исчезала старая*--!>
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";//показыавает текущий слайд
+}
+<!--*Изменение ячейки и картинки на жирафа*--!>
+function applyAlternativeStyle(cell) {
+	cell.className = "alternative";
+	document.getElementById("st").src = "image/medved.jpg";
+    }
+
+<!--*Изменение ячейки и картинки на Коалу*--!>
+function applyAlternativeStyle1(cell) {
+	cell.className = "alternative";
+	document.getElementById("st").src = "image/enot.jpg";
+    }
+<!--*Изменение ячейки и картинки на лису*--!>
+function applyAlternativeStyle2(cell) {
+	cell.className = "alternative";
+	document.getElementById("st").src = "image/cap.jpg";
+    }
+<!--*Изменение ячейки и картинки на белый лист*--!>
+    function restoreNormalStyle(cell) {
+	cell.className = "normal";
+	document.getElementById("st").src = "image/em.jpg";
+    }
+</script>
+</body>
+</html>

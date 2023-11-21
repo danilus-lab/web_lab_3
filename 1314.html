@@ -1,0 +1,73 @@
+!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Лабораторная 3</title>
+  <link rel="stylesheet" type="text/css" href="style11.css" media="screen">
+</head>
+<body>
+<div style="width:1920px;height:750px;background-color: #DDA0DD;">
+<p><input style="position:absolute; top:230px; left: 80px;" type=button value="Показать" OnClick="hello()"></p>
+<p><input style="position:absolute; top:230px; left: 10px;" type=button value="Сброс" OnClick="Repete()"></p>
+<p><input style="position:absolute; top:160px; left: 25px;" type="radio" id="wood" name="r"/><label for="r" style="position:absolute; top:160px; left: 45px;">Дерево</label></p>
+<p><input style="position:absolute; top:180px; left: 25px;" type="radio" id="dark" name="r"/><label for="r" style="position:absolute; top:180px; left: 45px;">Темный</label></p>
+<p><input style="position:absolute; top:200px; left: 25px;" type="radio" id="perg" name="r"/><label for="r" style="position:absolute; top:200px; left: 45px;">Пергамент</label></p>
+<h1 style="position:absolute; top:25px; left: 25px;">Меню Ресторана</h1>
+<p style="position:absolute; top:70px; left: 25px;">Блюдо <select id="artist">
+<option value="s1" selected>Салат цезарь</option> 
+<option value="s2">Карбонара</option>
+<option value="s3">Стейк из говядины</option> </select>
+<p style="position:absolute; top:95px; left: 25px;">Подпись <input style="position:absolute; top:5px; left: 80px;" type="text"id="text" placeholder="Введите текст" size=34></p>
+<p style="position:absolute; top:120px; left: 25px;">Картинка для фона Декорирование текста</p>
+<p style="position:absolute; top:145px; left: 170px;"><input type="checkbox" id="kur"/> <label for="kur">Курсив/нет</label></p>
+<p style="position:absolute; top:165px; left: 170px;"><input type="checkbox" id="pod" /> <label for="pod">Подчёркивание/нет</label></p>
+<p style="position:absolute; top:185px; left: 170px;"><input type="checkbox" id="gr"/> <label for="gr">Жирный/нет</label></p>
+<script>
+
+function hello()
+{
+var p=document.getElementById('text').value;
+var f;
+if(document.getElementById('wood').checked)
+f="'image/wood.jpg'";
+if(document.getElementById('dark').checked)
+f="'image/dark.jpg'";
+if(document.getElementById('perg').checked)
+f="'image/perg.jpg'";
+var str="<IMG style='width=100%; height=100%;' src="+f+"><div style='position:absolute; top:0px; ";
+var win=window.open("","","width=560,height=560");
+window.open();
+if(document.getElementById('kur').checked)
+str=str+"font-style: italic;"
+if(document.getElementById('gr').checked)
+str=str+"font-weight: bold;"
+if(document.getElementById('pod').checked)
+str=str+"text-decoration: underline;"
+var n =document.getElementById('artist').value;
+switch (n){
+case 's1':
+n = "Салат цезарь";
+break;
+case 's2':
+n = "Карбонара";
+break;
+case 's3':
+n = "Стейк из говядины";
+break;
+}
+var t;
+if(n=="Салат цезарь")
+t = "<IMG src='image/salad.jpg'>";
+if(n== "Карбонара")
+t = "<IMG src='image/carb.jpg'>";
+if(n == "Стейк из говядины")
+t = "<IMG src='image/stek.jpg'>";
+var str = str+"'><h1>"+n+"</h1><p>"+t+"</p><p>"+p+"</p></div>";
+win.document.write(str);
+win.document.close();
+}
+</script>
+</body>
+</html>

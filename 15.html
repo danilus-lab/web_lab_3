@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Лабораторная 3</title>
+  <link rel="stylesheet" type="text/css" href="style11.css" media="screen">
+</head>
+<body>
+<h1>Анкета</h1>
+<p>Фамилия: <input style="position:absolute; top:80px; left: 170px;" type="text"id="f" placeholder="Введите текст" size=34></p>
+<p>Имя: <input style="position:absolute; top:115px; left: 170px;" type="text"id="i" placeholder="Введите текст" size=34></p>
+<p>Отчество: <input style="position:absolute; top:150px; left: 170px;" type="text"id="o" placeholder="Введите текст" size=34></p>
+<p>Год рождения: <input style="position:absolute; top:185px; left: 170px;" type="text"id="gr" placeholder="Введите текст" size=34></p>
+<p>Место рождения: <input style="position:absolute; top:220px; left: 170px;" type="text"id="mr" placeholder="Введите текст" size=34></p>
+<p>Любимое занятие: <input style="position:absolute; top:255px; left: 170px;" type="text"id="lz" placeholder="Введите текст со строчной буквы" size=34></p>
+<p>Не любимое занятие: <input style="position:absolute; top:290px; left: 170px;" type="text"id="n" placeholder="Введите текст со строчной буквы" size=34></p>
+<p><input type=button value="Сформировать биографию" OnClick="NewWin()"></p>
+<script>
+function NewWin()
+{
+var win=window.open("","","width=560,height=560");
+window.open();
+var str = "<h1>О себе</h1> <p>Я,"+ document.getElementById('f').value+ document.getElementById('i').value+ document.getElementById('o').value+"родился в "+ document.getElementById('gr').value+
+"году в городе "+ document.getElementById('mr').value+"</p><p>Больше всего я люблю "+ document.getElementById('lz').value+" и очень не люблю "+ document.getElementById('n').value+"."
+win.document.write(str);
+win.document.close();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Лабораторная 3</title>
+  <link rel="stylesheet" type="text/css" href="style11.css" media="screen">
+</head>
+<body>
+<h1>Анкета</h1>
+<p>Имя героя: <input style="position:absolute; top:80px; left: 170px;" type="text"id="f" placeholder="Введите текст" size=34></p>
+<p>Его любимое занятие: <input style="position:absolute; top:115px; left: 170px;" type="text"id="z" placeholder="Введите текст" size=34></p>
+<p>Друг героя: <input style="position:absolute; top:150px; left: 170px;" type="text"id="d" placeholder="Введите текст" size=34></p>
+<p>Подарок: <input style="position:absolute; top:185px; left: 170px;" type="text"id="p" placeholder="Введите текст" size=34></p>
+<p><input type=button value="Сформировать сказку" OnClick="NewWin()"></p>
+<script>
+function NewWin()
+{
+var win=window.open("","","width=560,height=560");
+window.open();
+var str = "<h1>"+document.getElementById('f').value+" и подарок</h1> <p>Жил-был "+ document.getElementById('f').value+". Он очень любил "+document.getElementById('z').value+". </p><p>В этот день он как всегда занимался любимым делом. А "+document.getElementById('d').value+" любовался тем с какой самоотдачей он этим занимается. "+document.getElementById('d').value+" так вдохновился работой "+document.getElementById('f').value+", что тоже нашёл себе дело по душе. В благодарность он принёс "+document.getElementById('f').value+" "+document.getElementById('p').value+".</p>";
+win.document.write(str);
+win.document.close();
+}
+</script>
+</body>
+</html>

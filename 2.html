@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Лабораторная 3</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" type="text/css" href="style2.css" media="screen">
+</head>
+<body>
+<!--*Контейнер для слайд-шоу*--!>
+<div class="slideshow-container">
+<!--*Добавление слайдов (картинка+текст) class указывается для того чтоб
+настроить его через style.css*--!>
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 4</div>
+    <img src="image\car1.jpg" style="width:100%">
+    <div class="text">Mercedes</div>
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 4</div>
+    <img src="image\car2.jpg" style="width:100%">
+    <div class="text">BMW</div>
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 4</div>
+    <img src="image\car3.jpg" style="width:100%">
+    <div class="text">Renault</div>
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 4</div>
+    <img src="image\car4.jpg" style="width:100%">
+    <div class="text">Toyota</div>
+  </div>
+<!--*Добавление стрелочек и обработчика событий *--!>
+<!--*&#10094; - код символя стрелочка*--!>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<!--*Добавление точек под картинками (не обязательно)*--!>
+<br>
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+</div>
+<script>
+<!--*переменная с текущим слайдом*--!>
+var slideIndex = 1;
+showSlides(slideIndex);
+<!--*переход к следущему слайду*--!>
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+<!--*возврат к предыдущему слайду*--!>
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+<!--*функция проверяющая слайды*--!>
+function showSlides(n) {
+  var i;//счётчик
+  var slides = document.getElementsByClassName("mySlides");// массив слайдов
+  var dots = document.getElementsByClassName("dot");// массив точек
+  if (n > slides.length) {slideIndex = 1}//если переходим к следущему после 4, то это 1
+  if (n < 1) {slideIndex = slides.length}//если возвращаемся раньше 1, то это 4
+<!--*Для того чтоб появлялась новая картинка и исчезала старая*--!>
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+<!--*из-за этого есть тёмная точка*--!>
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";//показыавает текущий слайд
+  dots[slideIndex-1].className += " active";//делает яркой текущую точку
+}
+</script>
+</body>
+</html>

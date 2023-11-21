@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Лабораторная 3</title>
+</head>
+<body>
+<div style="width:1920px;height:750px;background-color: #eba134;">
+<h1> Расчёт площади прямоугольника </h1>
+<p> Введите стороны прямоугольника </p>
+<input  id="x"/>
+<input  id="y"/>
+<input type="button" value="Посчитать" onClick="checkAll();">
+<input type="text"id="result" value="">
+<script>
+function checkAll()
+{
+var x=document.getElementById("x").value;
+var y=document.getElementById("y").value;
+var p4=document.getElementById('result');
+alert(x*y);
+p4.value="Площадь: "+x*y;
+}
+</script>
+</body>
+</html>

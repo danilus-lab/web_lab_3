@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Лабораторная 3</title>
+</head>
+<body>
+<div style="width:1920px;height:750px;background-color: #eba134;">
+<!--*Ссылка на 9 задание*--!>
+<a  href="8.html">К заданию 9</a>
+<h1> Расчёт расстояния от точки до начала координат </h1>
+<p> Введите координаты точки </p>
+<input  id="x"/>
+<input  id="y"/>
+<input type="button" value="Посчитать" onClick="checkAll();">
+<input type="text"id="result" value="">
+<script>
+function checkAll()
+{
+var x=document.getElementById("x").value;
+var y=document.getElementById("y").value;
+var p4=document.getElementById('result');
+p4.value="Расстояние: "+Math.sqrt(x*x+y*y);
+}
+</script>
+</body>

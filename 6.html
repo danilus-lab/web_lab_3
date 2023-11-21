@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Лабораторная 3</title>
+</head>
+<body>
+<div style="width:1920px;height:750px;background-color: #eba134;">
+<div>
+<script>
+let mon = ["Январь", "Февраль", "Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
+let ned = ["Суббота","Воскресенье","Понедельник", "Вторник", "Среда","Четверг","Пятнца"];
+let currentDate = new Date();
+var q;
+switch(currentDate.getMonth()){
+case 3,6:
+q=0;
+break;
+case 11,8:
+q=6;
+break;
+case 0,9:
+q=1;
+break;
+case 4:
+q=2;
+break;
+case 7:
+q=3;
+break;
+case 1,2,10:
+q=4;
+break;
+case 5:
+q=5;
+break;
+}
+var a = (currentDate.getDate()+q+6)%7;
+document.write("Сегодня: "+currentDate.getDate()+" "+mon[currentDate.getMonth()]+" "+currentDate.getFullYear()+" "+ned[a]);
+
+</script>
+</div>
+</body>

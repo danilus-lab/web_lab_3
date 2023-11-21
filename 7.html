@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Лабораторная 3</title>
+</head>
+<body>
+<div style="width:1920px;height:750px;background-color: #eba134;">
+<p> Введите вашу дату рождения</p>
+<form>
+<input type="date" id="c1" name="date"/>
+<input type="button" value="Продолжить" onClick="checkAll();">
+<input type="text"id="result" name="result" value="">
+</form>
+<script>
+function checkAll()
+{
+let p1=new Date(document.getElementById('c1').value);
+
+var p4=document.getElementById('result');
+let currentDate = new Date();
+
+p4.value="Вы прожили: "+Math.floor((currentDate-p1)/86400000)+" дней";
+}
+</script>
+</body>
